@@ -1,7 +1,14 @@
-import express  from "express";
+import express, {json}  from "express";
 const app = express()
 
 const PORT = 5000;
+const posts = []
+
+app.use(json())
+
+ app.get("/posts",(req,res)=>{
+     res.json(posts)
+ })
 
 app.listen(PORT,()=>{
     console.log("server is running");
