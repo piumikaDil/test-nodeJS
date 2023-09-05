@@ -10,6 +10,12 @@ app.use(json())
      res.json(posts)
  })
 
+app.post("/posts", (req, res) => {
+   const body = req.body;
+   posts.push(body)
+   res.send(body)
+})
+
 app.listen(PORT,()=>{
     console.log("server is running");
 })
